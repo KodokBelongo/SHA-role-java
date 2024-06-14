@@ -1,0 +1,70 @@
+// no 1
+public class CharacterCounter {
+
+    public static void main(String[] args) {
+        String str = "pemrogramanDasarJava1";
+        int upperCase = 0;
+        int lowerCase = 0;
+        int digit = 0;
+        int symbol = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (Character.isUpperCase(ch)) {
+                upperCase++;
+            } else if (Character.isLowerCase(ch)) {
+                lowerCase++;
+            } else if (Character.isDigit(ch)) {
+                digit++;
+            } else {
+                symbol++;
+            }
+        }
+
+        System.out.println("uppercase: " + upperCase);
+        System.out.println("lowercase: " + lowerCase);
+        System.out.println("angka: " + digit); // "angka" is the Indonesian word for "digit"
+        System.out.println("symbol: " + symbol);
+    }
+}
+
+
+// no 2
+Kode yang diberikan menunjukkan fungsi roger yang menerima dua argumen integer, k dan b. Fungsi ini memiliki tiga kasus:
+
+Jika b sama dengan 1, fungsi mengembalikan 1.
+Jika k habis dibagi b, fungsi mengembalikan 1 ditambah nilai return dari pemanggilan rekursif roger(k, b) dengan nilai b dikurangi 1.
+Jika tidak ada kondisi di atas yang terpenuhi, fungsi mengembalikan 0 ditambah nilai return dari pemanggilan rekursif roger(k, b) dengan nilai b dikurangi 1.
+
+Saat kita memanggil roger(8, 8), kondisi pertama tidak terpenuhi karena b bukan sama dengan 1.
+
+Kondisi kedua juga tidak terpenuhi karena 8 tidak habis dibagi 8.
+
+Oleh karena itu, kondisi ketiga yang dijalankan. Dalam kondisi ketiga, fungsi mengembalikan 0 ditambah nilai return dari pemanggilan rekursif roger(8, 7).
+
+Pemanggilan rekursif roger(8, 7) akan mengikuti proses yang sama. Kondisi pertama dan kedua tidak terpenuhi, sehingga kondisi ketiga dijalankan. Dalam kondisi ketiga, fungsi mengembalikan 0 ditambah nilai return dari pemanggilan rekursif roger(8, 6).
+
+Proses rekursif ini akan terus berlanjut hingga mencapai kasus dasar, yaitu ketika b sama dengan 1. Pada saat itu, fungsi akan mengembalikan 1.
+Nilai return dari pemanggilan roger(8, 8) adalah 8.
+
+// no 3
+Kode yang diberikan menunjukkan fungsi rusak yang menerima satu argumen integer, n. Fungsi ini memiliki dua kasus:
+
+Jika n sama dengan 0, fungsi tidak melakukan apa-apa dan kembali.
+Jika n tidak sama dengan 0, fungsi mencetak string "Hello" n kali dan kemudian memanggil dirinya sendiri secara rekursif dengan nilai n dibagi 2.
+Saat kita memanggil rusak(1000), kondisi pertama tidak terpenuhi karena n bukan sama dengan 0.
+
+Oleh karena itu, kondisi kedua dijalankan. Dalam kondisi kedua, fungsi mencetak string "Hello" 1000 kali dan kemudian memanggil dirinya sendiri secara rekursif dengan nilai n dibagi 2, yaitu 500.
+
+Pemanggilan rekursif rusak(500) akan mengikuti proses yang sama. Kondisi pertama tidak terpenuhi, sehingga kondisi kedua dijalankan. Dalam kondisi kedua, fungsi mencetak string "Hello" 500 kali dan kemudian memanggil dirinya sendiri secara rekursif dengan nilai n dibagi 2, yaitu 250.
+
+Proses rekursif ini akan terus berlanjut hingga mencapai kasus dasar, yaitu ketika n sama dengan 0. Pada saat itu, fungsi tidak melakukan apa-apa dan kembali.
+Fungsi rusak tidak memiliki nilai return. Fungsi ini hanya mencetak string "Hello" dan memanggil dirinya sendiri secara rekursif.
+Pemanggilan rusak(1000) tidak menghasilkan nilai return. Fungsi ini hanya mencetak string "Hello" 1000 + 500 + 250 + ... + 1 (10 kali) kali.
+Fungsi rusak adalah contoh dari fungsi rekursif. Fungsi rekursif adalah fungsi yang memanggil dirinya sendiri. Dalam kasus ini, fungsi rusak memanggil dirinya sendiri dengan nilai n dibagi 2.
+
+Fungsi rekursif dapat digunakan untuk menyelesaikan masalah yang dapat diuraikan menjadi submasalah yang lebih kecil dan sama. Dalam kasus ini, masalah mencetak string "Hello" 1000 kali dapat diuraikan menjadi submasalah mencetak string "Hello" 500 kali, 250 kali, dan seterusnya.
+
+Fungsi rekursif dapat menjadi alat yang ampuh untuk menyelesaikan masalah yang kompleks. Namun, penting untuk berhati-hati saat menggunakan fungsi rekursif, karena dapat menyebabkan masalah stack overflow jika tidak diimplementasikan dengan benar.
+
+Soal di gambar meminta kita untuk menghitung nilai return dari pemanggilan rusak(1000). Dengan menganalisis kode dan memahami cara kerja fungsi rekursif, kita dapat menentukan bahwa fungsi ini tidak memiliki nilai return. Fungsi ini hanya mencetak string "Hello" 1000 + 500 + 250 + ... + 1 (10 kali) kali.
